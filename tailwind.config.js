@@ -5,11 +5,14 @@ export default {
     "./src/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {
-      colors: {
-        "black-light": "#312E38"
-      }
+    colors: {
+      "black400": "#312E38",
+      "black800": "#232129",
+      "blue800": "#1A3972",
+      "purple600": "#6963D8",
+      "blue200": "#69A0AC"
     },
+    extend: {},
   },
   plugins: [],
 }
