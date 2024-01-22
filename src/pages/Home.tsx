@@ -2,6 +2,7 @@ import { useContext, useEffect, useState } from "react";
 import { DragonCard } from "../components/DragonCard";
 import {  fetchDragons } from "../services/api";
 import { ListDragonContext } from "../context/ListDragonContext";
+import { ModalCreatedDragon } from "../components/ModalCreatedDragon";
 
 
 export function Home() {
@@ -36,14 +37,13 @@ export function Home() {
             Pesquisar
           </button>
 
-          <button className="bg-white min-w-40  h-10 ml-2 rounded-lg p-2">
-            Criar um Dragão
-          </button>
+          <ModalCreatedDragon />
+
         </div>
 
         <div className="mt-20 flex items-center bg-black400 flex-wrap gap-2 md:gap-4 justify-center w-full  py-2">
 
-           {listDragon.map((dragon) => (
+           {listDragon.sort((a,b) => a.name.localeCompare(b.name)).map((dragon) => (
             <DragonCard
               key={dragon.id}
               name={dragon.name}
