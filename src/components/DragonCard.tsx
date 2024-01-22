@@ -51,9 +51,11 @@ export function DragonCard({
         <ModalEditDragon dragonProps={dragonProps} />
       </div>
 
+
+
       <h4>{name}</h4>
       <span>{type}</span>
-      <span>{histories}</span>
+      <span className="text-center">{histories}</span>
 
       <span>{new Date(createdAt).toDateString()}</span>
     </div>

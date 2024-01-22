@@ -23,7 +23,7 @@ export function ModalEditDragon({ dragonProps }: DragonProps) {
 
   const toggle = () => setModal(!modal);
 
-  const handleEditDragon = async (data) => {
+  const handleEditDragon = async (data: { preventDefault: () => void; }) => {
     data.preventDefault();
     try {
       await api.put(`/${dragonProps.id}`, {
@@ -83,7 +83,7 @@ export function ModalEditDragon({ dragonProps }: DragonProps) {
                 value={histories}
                 onChange={(e) => setHistories(e.target.value)}
                 placeholder="Histories"
-                className="bg-black800 h-10 rounded-lg p-2  text-white placeholder-[#fff]"
+                className="bg-black800 h-20 rounded-lg p-2  text-white placeholder-[#fff]"
               />
             </div>
           </ModalBody>
