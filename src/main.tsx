@@ -4,7 +4,7 @@ import App from './App.tsx'
 import './index.css'
 import { ListDragonProvider } from './context/ListDragonContext.tsx'
 import { initializeApp } from "firebase/app";
-
+import { BrowserRouter } from 'react-router-dom';
 
 const firebaseConfig = {
   apiKey: "AIzaSyA3zOFFgZ5bmqqT9cCl1XIcwscluxcKqyI",
@@ -19,8 +19,11 @@ export const app = initializeApp(firebaseConfig);
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
+    <BrowserRouter>
     <ListDragonProvider>
+
       <App />
     </ListDragonProvider>
+    </BrowserRouter>
   </React.StrictMode>,
 )

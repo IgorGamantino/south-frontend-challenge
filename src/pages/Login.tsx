@@ -4,27 +4,36 @@ import logoImg from "../assets/dragon2.png";
 
 import { getAuth, createUserWithEmailAndPassword } from "firebase/auth";
 import { app } from "../main";
+import { useNavigate } from "react-router-dom";
 export function Login() {
   const [email, setEmail] = useState("")
   const [password, setPassword] = useState("")
   const auth = getAuth(app)
+  const navigate = useNavigate();
 
   function handleSignIn() {
     try {
       createUserWithEmailAndPassword(auth, email, password).then((user)=> console.log(user))
+
+        navigate("/home")
+
     } catch (error) {
       console.log(error)
     }
 
   }
 
+  function handleNavigationSignUp (){
+    navigate("signUp")
+  }
+
 
 
   return (
     <main className="h-screen flex items-stretch">
-      <section className="bg-black400  max-w-screen-md md:min-w-[30rem] flex items-center justify-center flex-col">
+      <section className="bg-black400   max-w-screen-md md:min-w-[30rem] flex items-center justify-center flex-col">
         <div className="text-center  px-8 my-20 flex gap-5 flex-col">
-          <h2 className="text-6xl mb-20">Dragons Realms</h2>
+          <h2 className="text-6xl text-white font-bold mb-20">Dragons Realms</h2>
 
           <input value={email} onChange={email => setEmail(email.target.value)}
           placeholder="email"
@@ -35,6 +44,10 @@ export function Login() {
           onChange={password => setPassword(password.target.value)} className="h-14 text-white bg-black800 rounded-xl p-2" />
 
           <button className="h-14 bg-purple600 rounded-xl" onClick={handleSignIn}>Entrar</button>
+
+          <button className="text-purple600 font-semibold text-lg"
+          onClick={handleNavigationSignUp}
+          >Criar conta</button>
         </div>
       </section>
       <div className="h-full max-h-screen hidden md:block ">
