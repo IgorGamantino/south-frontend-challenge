@@ -1,6 +1,6 @@
 import { useContext, useEffect } from "react";
 import { DragonCard } from "../components/DragonCard";
-import { fetchDragons } from "../services/api";
+import { api } from "../services/api";
 import { ListDragonContext } from "../context/ListDragonContext";
 import { ModalCreatedDragon } from "../components/ModalCreatedDragon";
 import { InputSearch } from "../components/InputSearch";
@@ -10,8 +10,8 @@ export function Home() {
 
   useEffect(() => {
     async function getDragonList() {
-      const response = await fetchDragons();
-      setListDragon(response);
+      const response = await api.get("/");
+      setListDragon(response.data);
     }
     getDragonList();
   }, [setListDragon]);
