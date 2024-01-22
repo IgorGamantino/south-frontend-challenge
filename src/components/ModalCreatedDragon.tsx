@@ -1,17 +1,9 @@
-import { useCallback, useContext, useState } from 'react';
+import { useContext, useState } from 'react';
 import {  Modal, ModalHeader, ModalBody, ModalFooter } from 'reactstrap';
-import pencilImg from "../assets/pencil.svg"
 import { api } from '../services/api';
 import { ListDragonContext } from '../context/ListDragonContext';
 
-type DragonProps = {
- dragonProps: {
-  id: number
-  name: string;
-  type: string;
-  histories: string
- }
-}
+
 export function ModalCreatedDragon() {
   const [modal, setModal] = useState(false);
 
@@ -27,19 +19,15 @@ export function ModalCreatedDragon() {
   const handleEditDragon = async (data) => {
      data.preventDefault()
     try {
-
-
      const response = await  api.post(`/`,{
           name,
           type,
           histories,
           createdAt: new Date()
       })
-
       setListDragon([...listDragon, response.data])
 
         setModal(!modal)
-
     }
    catch (error) {
       console.log(error)

@@ -1,12 +1,11 @@
-import { useContext, useEffect, useState } from "react";
+import { useContext, useEffect } from "react";
 import { DragonCard } from "../components/DragonCard";
-import {  fetchDragons } from "../services/api";
+import { fetchDragons } from "../services/api";
 import { ListDragonContext } from "../context/ListDragonContext";
 import { ModalCreatedDragon } from "../components/ModalCreatedDragon";
 
-
 export function Home() {
-  const {setListDragon, listDragon} = useContext(ListDragonContext)
+  const { setListDragon, listDragon } = useContext(ListDragonContext);
 
   useEffect(() => {
     async function getDragonList() {
@@ -38,21 +37,21 @@ export function Home() {
           </button>
 
           <ModalCreatedDragon />
-
         </div>
 
         <div className="mt-20 flex items-center bg-black400 flex-wrap gap-2 md:gap-4 justify-center w-full  py-2">
-
-           {listDragon.sort((a,b) => a.name.localeCompare(b.name)).map((dragon) => (
-            <DragonCard
-              key={dragon.id}
-              name={dragon.name}
-              createdAt={dragon.createdAt}
-              histories={dragon.histories}
-              type={dragon.type}
-              id={dragon.id}
-            />
-          ))}
+          {listDragon
+            .sort((a, b) => a.name.localeCompare(b.name))
+            .map((dragon) => (
+              <DragonCard
+                key={dragon.id}
+                name={dragon.name}
+                createdAt={dragon.createdAt}
+                histories={dragon.histories}
+                type={dragon.type}
+                id={dragon.id}
+              />
+            ))}
         </div>
       </section>
     </main>
