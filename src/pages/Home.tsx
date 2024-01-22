@@ -13,29 +13,31 @@ export function Home() {
       setListDragon(response);
     }
     getDragonList();
-  }, []);
+  }, [setListDragon]);
 
   return (
-    <main className="bg-black400  flex items-center p-5 md:p-10 justify-center">
+    <main className="bg-black400 min-h-screen flex p-5 md:p-10 justify-center">
       <section
         className="
         w-full
-        max-w-[70rem]
         h-full
         rounded-2xl
         flex
-        items
         flex-col
       "
       >
-        <div className="w-full flex  items-center justify-center bg-blue800 p-5">
+        <div className="w-full flex  items-center justify-center rounded-xl bg-blue800 p-5">
           <input
             placeholder="Pesquise pelo nome do dragão"
-            className="px-2 h-10 w-full bg-blue200 rounded-lg"
+            className="px-2 h-10 w-full bg-blue200 rounded-lg placeholder-[#fff]"
             type="text"
           />
           <button className="bg-purple600 h-10 ml-2 rounded-lg p-2">
             Pesquisar
+          </button>
+
+          <button className="bg-white min-w-40  h-10 ml-2 rounded-lg p-2">
+            Criar um Dragão
           </button>
         </div>
 

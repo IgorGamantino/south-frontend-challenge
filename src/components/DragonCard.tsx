@@ -4,6 +4,7 @@ import pencilImg from "../assets/pencil.svg"
 import { useCallback, useContext } from "react";
 import {  api } from "../services/api";
 import { ListDragonContext } from "../context/ListDragonContext";
+import { ModalEditDragon } from "./ModalEditDragon";
 
 type DragonProps = {
   createdAt: Date,
@@ -33,24 +34,26 @@ export function DragonCard({
 
     setListDragon(filterDelete)
 
-  },[])
+  },[listDragon, setListDragon])
 
+  const dragonProps = {
+    name,
+    type,
+    histories,
+    id
+  }
 
   return (
     <div className="max-w-[15rem]  relative flex flex-col justify-center items-center w-full h-[15rem] bg-purple600 rounded-lg">
     <div key={id} className="absolute top-2 right-2 ">
-      <Tooltip className="p-2" label="Deletar seu Dragão?" bg="#FFFF" placement='top'>
+
       <button className="bg-[#fff] rounded-s-lg p-2" onClick={() =>handleDeleteDragon(id)}>
         <img src={trashImg} width={20} />
 
       </button>
-      </Tooltip>
 
-    <Tooltip className="p-2" label="Editar seu Dragão?" bg="#FFF" placement="top">
-    <button className="ml-2 p-2 rounded-e-lg bg-[#fff]">
-          <img src={pencilImg} width={20} />
-      </button>
-    </Tooltip>
+
+        <ModalEditDragon dragonProps={dragonProps} />
 
       </div>
 
