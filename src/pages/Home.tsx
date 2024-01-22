@@ -20,7 +20,7 @@ export function Home() {
 
 
   return (
-    <main className="bg-black400 min-h-screen flex p-5 md:p-10 justify-center">
+    <main className="min-h-screen w-screen  flex p-5  md:p-10 justify-center">
       <section
         className="
         w-full
