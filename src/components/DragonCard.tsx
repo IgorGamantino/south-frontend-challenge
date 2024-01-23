@@ -40,6 +40,7 @@ export function DragonCard({
     id,
   };
 
+
   return (
     <div className="max-w-[15rem]   relative flex flex-col justify-center items-center w-full min-h-[15rem] bg-purple600 rounded-lg">
       <div key={id} className="absolute top-2 right-2 ">
@@ -70,9 +71,11 @@ export function DragonCard({
         </div>
       )}
 
-      <span className="mt-2 text-black400 font-semibold">
-        {formattedData(new Date(createdAt))}
-      </span>
+      {createdAt && (
+         <span className="mt-2 text-black400 font-semibold">
+         {formattedData(new Date(createdAt))}
+        </span>
+      )}
     </div>
   );
 }

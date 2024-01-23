@@ -17,8 +17,6 @@ export function Home() {
   }, [setListDragon]);
 
 
-
-
   return (
     <main className="min-h-screen w-screen  flex p-5  md:p-10 justify-center">
       <section
@@ -30,7 +28,7 @@ export function Home() {
         flex-col
       "
       >
-        <div className="w-full flex  items-center justify-center rounded-xl bg-blue800 p-5">
+        <div className="w-full flex-col  items-center justify-center rounded-xl bg-blue800 p-5">
           <InputSearch />
 
           <ModalCreatedDragon />
