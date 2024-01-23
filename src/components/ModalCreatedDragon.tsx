@@ -36,7 +36,7 @@ export function ModalCreatedDragon() {
 
   return (
     <>
-       <button className="bg-white min-w-40  h-10 ml-2 rounded-lg p-2" onClick={toggle}>
+       <button className="bg-white w-full  md:max-w-40  mb-4   md:h-10 sm:ml-2 rounded-lg p-2" onClick={toggle}>
             Criar um Dragão
         </button>
       <Modal isOpen={modal} toggle={toggle}>

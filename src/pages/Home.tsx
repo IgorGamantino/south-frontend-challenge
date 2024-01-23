@@ -18,7 +18,7 @@ export function Home() {
 
 
   return (
-    <main className="min-h-screen w-screen  flex p-5  md:p-10 justify-center">
+    <main className="min-h-screen w-screen  flex  p-2 sm:p-10 justify-center">
       <section
         className="
         w-full
@@ -28,7 +28,7 @@ export function Home() {
         flex-col
       "
       >
-        <div className="w-full flex-col  items-center justify-center rounded-xl bg-blue800 p-5">
+        <div className="w-full sm:flex items-center justify-center rounded-xl p-2 md:p-5">
           <InputSearch />
 
           <ModalCreatedDragon />
