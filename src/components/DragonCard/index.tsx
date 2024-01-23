@@ -1,9 +1,9 @@
-import trashImg from "../assets/trash.svg";
+import trashImg from "../../assets/trash.svg";
 import { useCallback, useContext } from "react";
-import { api } from "../services/api";
-import { ListDragonContext } from "../context/ListDragonContext";
-import { ModalEditDragon } from "./ModalEditDragon";
-import { formattedData } from "../utils/formattedData";
+import { api } from "../../services/api";
+import { ListDragonContext } from "../../context/ListDragonContext";
+import { ModalEditDragon } from "../ModalEditDragon";
+import { formattedData } from "../../utils/formattedData";
 
 type DragonProps = {
   createdAt: Date;
@@ -21,6 +21,10 @@ export function DragonCard({
   id,
 }: DragonProps) {
   const { setListDragon, listDragon } = useContext(ListDragonContext);
+
+
+
+
 
   const handleDeleteDragon = useCallback(
     async (id: number) => {
@@ -48,7 +52,7 @@ export function DragonCard({
           className="bg-[#fff] rounded-s-lg p-2"
           onClick={() => handleDeleteDragon(id)}
         >
-          <img src={trashImg} width={20} />
+          <img src={trashImg} width={20} alt="trash" />
         </button>
         <ModalEditDragon dragonProps={dragonProps} />
       </div>
@@ -71,11 +75,10 @@ export function DragonCard({
         </div>
       )}
 
-      {createdAt && (
+
          <span className="mt-2 text-black400 font-semibold">
          {formattedData(new Date(createdAt))}
         </span>
-      )}
     </div>
   );
 }
