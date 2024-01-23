@@ -1,30 +1,48 @@
-# React + TypeScript + Vite
+# DragonLandia
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+<h3>
+Para inicar o projeto devemos seguir os seguintes passos
+</h3>
 
-Currently, two official plugins are available:
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react/README.md) uses [Babel](https://babeljs.io/) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+<h3> #1 </h3>
 
-## Expanding the ESLint configuration
+ <span>clonar o repositório</span>
 
-If you are developing a production application, we recommend updating the configuration to enable type aware lint rules:
-
-- Configure the top-level `parserOptions` property like this:
-
-```js
-export default {
-  // other rules...
-  parserOptions: {
-    ecmaVersion: 'latest',
-    sourceType: 'module',
-    project: ['./tsconfig.json', './tsconfig.node.json'],
-    tsconfigRootDir: __dirname,
-  },
-}
+ ```js
+  https://github.com/IgorGamantino/south-frontend-challenge.git
 ```
 
-- Replace `plugin:@typescript-eslint/recommended` to `plugin:@typescript-eslint/recommended-type-checked` or `plugin:@typescript-eslint/strict-type-checked`
-- Optionally add `plugin:@typescript-eslint/stylistic-type-checked`
-- Install [eslint-plugin-react](https://github.com/jsx-eslint/eslint-plugin-react) and add `plugin:react/recommended` & `plugin:react/jsx-runtime` to the `extends` list
+<h3> #2 </h3>
+<span>
+Depois de clonar o repositório e abri no seu editor de código, chegou a hora de instalar a dependência, para isso devemos rodar o seguinte comando
+</span>
+
+```js
+  npm install
+
+  ou
+
+  yarn
+
+```
+<h3> #3 </h3>
+
+
+<span>
+Depois de instalar todas as dependências, podemos seguir para execução do projeto, vamos rodar o seguinte comando
+</span>
+
+
+```js
+  npm run dev
+
+  ou
+
+  yarn dev
+
+```
+
+
+
+
