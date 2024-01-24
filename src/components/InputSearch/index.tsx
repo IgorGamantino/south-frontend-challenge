@@ -1,12 +1,15 @@
 import { useContext } from "react";
-import { ListDragonContext } from "../context/ListDragonContext";
+import { ListDragonContext } from "../../context/ListDragonContext";
 
 export function InputSearch() {
   const {setSearchDragon,searchDragon } = useContext(ListDragonContext);
 
 
+  console.log(searchDragon,"change")
+
   return (
       <input
+        data-testid="input"
         onChange={name => setSearchDragon(name.target.value)}
         value={searchDragon}
         placeholder="Pesquise pelo nome do dragão"

@@ -59,7 +59,7 @@ export function ModalEditDragon({ dragonProps }: DragonProps) {
 
   return (
     <>
-      <button onClick={toggle} className="ml-2 p-2 rounded-e-lg bg-[#fff]">
+      <button data-testid="editar" onClick={toggle} className="ml-2 p-2 rounded-e-lg bg-[#fff]">
         <img src={pencilImg} width={20} />
       </button>
       <Modal isOpen={modal} toggle={toggle}>

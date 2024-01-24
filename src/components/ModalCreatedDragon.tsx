@@ -16,7 +16,7 @@ export function ModalCreatedDragon() {
   const toggle = () => setModal(!modal);
 
 
-  const handleEditDragon = async (data: { preventDefault: () => void; }) => {
+  const handleCreateDragon = async (data: { preventDefault: () => void; }) => {
      data.preventDefault()
     try {
      const response = await  api.post(`/`,{
@@ -41,7 +41,7 @@ export function ModalCreatedDragon() {
         </button>
       <Modal isOpen={modal} toggle={toggle}>
         <ModalHeader toggle={toggle}>Criar seu Dragão</ModalHeader>
-        <form onSubmit={handleEditDragon}>
+        <form onSubmit={handleCreateDragon}>
         <ModalBody>
           <div className='flex flex-col gap-2'>
             <input value={name} onChange={e => setName(e.target.value)} placeholder='Name' className='bg-black800 h-10 rounded-lg p-2 text-white placeholder-[#fff]' />
