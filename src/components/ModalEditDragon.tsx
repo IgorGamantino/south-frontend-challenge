@@ -3,6 +3,7 @@ import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
 import pencilImg from "../assets/pencil.svg";
 import { api } from "../services/api";
 import { ListDragonContext } from "../context/ListDragonContext";
+import { InputForm } from "./InputForm";
 
 type DragonProps = {
   dragonProps: {
@@ -67,24 +68,21 @@ export function ModalEditDragon({ dragonProps }: DragonProps) {
         <form onSubmit={handleEditDragon}>
           <ModalBody>
             <div className="flex flex-col gap-2">
-              <input
-                value={name}
-                onChange={(e) => setName(e.target.value)}
-                placeholder="Name"
-                className="bg-black800 h-10 rounded-lg p-2 text-white placeholder-[#fff]"
-              />
-              <input
-                value={type}
-                onChange={(e) => setType(e.target.value)}
-                placeholder="Type"
-                className="bg-black800 h-10 rounded-lg p-2  text-white placeholder-[#fff]"
-              />
-              <input
-                value={histories}
-                onChange={(e) => setHistories(e.target.value)}
-                placeholder="Histories"
-                className="bg-black800 h-20 rounded-lg p-2  text-white placeholder-[#fff]"
-              />
+              <InputForm
+              placeholder="Name"
+              value={name}
+              onChange={name => setName(name.target.value)} />
+
+              <InputForm
+              placeholder="Type"
+              value={type}
+              onChange={type => setType(type.target.value)} />
+
+            <InputForm
+              placeholder="Histories"
+              value={histories}
+              onChange={history => setHistories(history.target.value)} />
+
             </div>
           </ModalBody>
           <ModalFooter>
