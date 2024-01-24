@@ -1,9 +1,9 @@
 import { useContext, useState } from "react";
 import { Modal, ModalHeader, ModalBody, ModalFooter } from "reactstrap";
-import pencilImg from "../assets/pencil.svg";
-import { api } from "../services/api";
-import { ListDragonContext } from "../context/ListDragonContext";
-import { InputForm } from "./InputForm";
+import pencilImg from "../../assets/pencil.svg";
+import { api } from "../../services/api";
+import { ListDragonContext } from "../../context/ListDragonContext";
+import { InputForm } from "../InputForm";
 
 type DragonProps = {
   dragonProps: {
